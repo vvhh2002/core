@@ -305,14 +305,10 @@ static UINT16 ir_ac_control(t_remote_ac_status ac_status, UINT16 *user_data, UIN
             function_code = AC_FUNCTION_MODE;
             break;
         case 2:
-            function_code = AC_FUNCTION_TEMPERATURE_UP;
-            break;
-        case 3:
-            function_code = AC_FUNCTION_TEMPERATURE_DOWN;
-            break;
         case 7:
             function_code = AC_FUNCTION_TEMPERATURE_UP;
             break;
+        case 3:
         case 8:
             function_code = AC_FUNCTION_TEMPERATURE_DOWN;
             break;
