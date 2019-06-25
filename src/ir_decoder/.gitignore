@@ -18,3 +18,4 @@ ir_decoder.VC.db
 ir_decoder.VC.VC.opendb
 ir_decoder.vcxproj.filters
 ir_decoder.vcxproj
+test_bin/
