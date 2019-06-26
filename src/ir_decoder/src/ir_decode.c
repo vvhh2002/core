@@ -318,6 +318,9 @@ static UINT16 ir_ac_control(t_remote_ac_status ac_status, UINT16 *user_data, UIN
         case 10:
             function_code = AC_FUNCTION_WIND_SWING;
             break;
+        case 11:
+            function_code = AC_FUNCTION_WIND_FIX;
+            break;
     }
 
     if (0 == context->default_code.len)
