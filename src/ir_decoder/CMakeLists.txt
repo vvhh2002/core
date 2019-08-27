@@ -89,6 +89,17 @@ set(SOURCE_FILES_JNI_SHARED_LIB
         src/ir_decode.c
         include/ir_decode.h)
 
-# add_library(irda_decoder SHARED ${SOURCE_FILES_SHARED_LIB})
-add_executable(irda_decoder ${SOURCE_FILES_EXECUTABLE})
+# SET(CMAKE_SYSTEM_NAME Linux)
+## ARM32 cross compile
+# SET(CMAKE_C_COMPILER "/usr/bin/arm-linux-gnueabi-gcc")
+# SET(CMAKE_CXX_COMPILER "/usr/bin/arm-linux-gnueabi-g++")
+# SET(CMAKE_FIND_ROOT_PATH "/usr/bin")
+
+## ARM64 cross compile
+# SET(CMAKE_C_COMPILER "/usr/x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc")
+# SET(CMAKE_C_COMPILER "/usr/x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++")
+# SET(CMAKE_FIND_ROOT_PATH "/x86_64_aarch64-linux-gnu")
+
+add_library(irda_decoder SHARED ${SOURCE_FILES_SHARED_LIB})
+# add_executable(irda_decoder ${SOURCE_FILES_EXECUTABLE})
 # add_library(irda_decoder SHARED ${SOURCE_FILES_JNI_SHARED_LIB})
