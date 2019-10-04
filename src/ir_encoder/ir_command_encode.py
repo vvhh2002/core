@@ -29,11 +29,11 @@ keymap_dict_dvd = ("POWER", "UP", "DOWN", "LEFT", "RIGHT", "OK", "VOL+", "VOL-",
 keymap_dict_fan = ("POWER", "UP", "DOWN", "LEFT", "RIGHT", "OK", "SPEED+", "SPEED-", "SWING", "SPEED", "MODE", "BACK",
                    "HOME", "MENU", "SWITCH")
 
-keymap_dict_stereo = ("POWER1", "UP", "DOWN", "LEFT", "RIGHT", "OK", "VOL+", "VOL-", "MUTE", "MENU1", "POWER2", "BACK",
-                      "HOME", "MENU2", "SWITCH")
-
 keymap_dict_projector = ("POWER", "UP", "DOWN", "LEFT", "RIGHT", "OK", "VOL+", "VOL-", "ZOOM+", "MENU1", "ZOOM-",
                          "BACK", "HOME", "MENU2", "SWITCH")
+
+keymap_dict_stereo = ("POWER1", "UP", "DOWN", "LEFT", "RIGHT", "OK", "VOL+", "VOL-", "MUTE", "MENU1", "POWER2", "BACK",
+                      "HOME", "MENU2", "SWITCH")
 
 keymap_dict_light = ("POWER", "COLOR_1", "COLOR_2", "COLOR_3", "COLOR_4", "COLOR_0", "BRIGHT", "DARK", "POWER_ON",
                      "RAINBOW", "POWER_OFF", "BACK", "HOME", "MENU", "SWITCH")
