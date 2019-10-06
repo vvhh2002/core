@@ -164,8 +164,7 @@ INT8 decode_as_ac(char *file_name)
                       ac_status.ac_temp,
                       ac_status.ac_wind_speed,
                       ac_status.ac_wind_dir,
-                      function_code
-            );
+                      function_code);
 
             ir_decode(function_code, user_data, &ac_status, TRUE);
         }

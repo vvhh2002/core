@@ -3,8 +3,9 @@ cmake_minimum_required(VERSION 3.2)
 ########################################################
 project(irda_decoder)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-add_definitions(-DBOARD_PC -DDEBUG)
-# add_definitions(-DBOARD_PC -DBOARD_PC_JNI -DDEBUG)
+add_definitions(-DBOARD_PC)
+# add_definitions(-DBOARD_PC -DBOARD_PC_JNI)
+# add_definitions(-DDEBUG)
 
 IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
     MESSAGE("compile platform : Linux")
