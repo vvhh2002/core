@@ -581,6 +581,9 @@ INT8 get_supported_wind_direction(UINT8 *supported_wind_direction)
     if (NULL != context)
     {
         *supported_wind_direction = (UINT8) (context->si.mode_count - 1);
+        if (*supported_wind_direction < 0) {
+            *supported_wind_direction = 0;
+        }
         return IR_DECODE_SUCCEEDED;
     }
     else
