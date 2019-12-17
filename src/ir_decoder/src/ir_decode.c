@@ -22,7 +22,7 @@ Revision log:
 struct ir_bin_buffer binary_file;
 struct ir_bin_buffer *p_ir_buffer = &binary_file;
 
-const char* release = "0.2.3";
+const char* release = "0.2.4";
 
 #if defined USE_DYNAMIC_TAG
 struct tag_head *tags;
