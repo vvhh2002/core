@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 
 ########################################################
-project(irda_decoder)
+project(ir_decoder)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 add_definitions(-DBOARD_PC)
 # add_definitions(-DBOARD_PC -DBOARD_PC_JNI)
@@ -42,7 +42,7 @@ set(SOURCE_FILES_EXECUTABLE
         include/ir_decode.h
         src/ir_test_main.c)
 
-set(SOURCE_FILES_SHARED_LIB
+set(SOURCE_FILES_LIB
         include/ir_defs.h
         src/ir_utils.c
         include/ir_utils.h
@@ -97,10 +97,11 @@ set(SOURCE_FILES_JNI_SHARED_LIB
 # SET(CMAKE_FIND_ROOT_PATH "/usr/bin")
 
 ## ARM64 cross compile
-# SET(CMAKE_C_COMPILER "/usr/x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc")
-# SET(CMAKE_C_COMPILER "/usr/x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++")
-# SET(CMAKE_FIND_ROOT_PATH "/x86_64_aarch64-linux-gnu")
+# SET(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-gcc")
+# SET(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-g++")
+# SET(CMAKE_FIND_ROOT_PATH "/usr/bin")
 
-add_library(irda_decoder SHARED ${SOURCE_FILES_SHARED_LIB})
-# add_executable(irda_decoder ${SOURCE_FILES_EXECUTABLE})
-# add_library(irda_decoder SHARED ${SOURCE_FILES_JNI_SHARED_LIB})
+add_library(ir_decoder SHARED ${SOURCE_FILES_LIB})
+# add_library(ir_decoder STATIC ${SOURCE_FILES_LIB})
+# add_executable(ir_decoder ${SOURCE_FILES_EXECUTABLE})
+# add_library(ir_decoder SHARED ${SOURCE_FILES_JNI_SHARED_LIB})
