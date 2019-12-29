@@ -101,7 +101,7 @@ set(SOURCE_FILES_JNI_SHARED_LIB
 # SET(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-g++")
 # SET(CMAKE_FIND_ROOT_PATH "/usr/bin")
 
-add_library(ir_decoder SHARED ${SOURCE_FILES_LIB})
+# add_library(ir_decoder SHARED ${SOURCE_FILES_LIB})
 # add_library(ir_decoder STATIC ${SOURCE_FILES_LIB})
-# add_executable(ir_decoder ${SOURCE_FILES_EXECUTABLE})
+add_executable(ir_decoder ${SOURCE_FILES_EXECUTABLE})
 # add_library(ir_decoder SHARED ${SOURCE_FILES_JNI_SHARED_LIB})
