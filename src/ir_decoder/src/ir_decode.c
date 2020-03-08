@@ -178,8 +178,14 @@ INT8 ir_binary_open(const UINT8 category, const UINT8 sub_category, UINT8* binar
         ir_printf("wrong remote category\n");
         return IR_DECODE_FAILED;
     }
-
     remote_category = category;
+
+    if (sub_category < SUB_CATEGORY_QUATERNARY ||
+        sub_category >= SUB_CATEGORY_NEXT)
+    {
+        ir_printf("wrong remote sub category : %d\n", sub_category);
+        return IR_DECODE_FAILED;
+    }
 
     if (category == REMOTE_CATEGORY_AC)
     {
