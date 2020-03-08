@@ -109,11 +109,17 @@ INT8 ir_file_open(const UINT8 category, const UINT8 sub_category, const char* fi
     if (category < REMOTE_CATEGORY_AC ||
         category >= REMOTE_CATEGORY_NEXT)
     {
-        ir_printf("wrong remote category\n");
+        ir_printf("wrong remote category : %d\n", category);
         return IR_DECODE_FAILED;
     }
-
     remote_category = category;
+
+    if (sub_category < SUB_CATEGORY_QUATERNARY ||
+        sub_category >= SUB_CATEGORY_NEXT)
+    {
+        ir_printf("wrong remote sub category : %d\n", sub_category);
+        return IR_DECODE_FAILED;
+    }
 
     if (category == REMOTE_CATEGORY_AC)
     {

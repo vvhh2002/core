@@ -31,9 +31,6 @@ extern "C"
 #define IR_TYPE_STATUS               0
 #define IR_TYPE_COMMANDS             1
 
-#define SUB_CATEGORY_QUATERNARY      0
-#define SUB_CATEGORY_HEXADECIMAL     1
-
 // remote control key definition
 #define KEY_TV_POWER                 0
 #define KEY_TV_MUTE                  1
@@ -199,7 +196,8 @@ extern "C"
 #define STANDARD_KEY_COUNT           14
 #define CHANNEL_KEY_COUNT            10
 
-typedef enum {
+typedef enum
+{
     REMOTE_CATEGORY_NONE = 0,
     REMOTE_CATEGORY_AC = 1,
     REMOTE_CATEGORY_TV = 2,
@@ -217,6 +215,14 @@ typedef enum {
     REMOTE_CATEGORY_NEXT,
     REMOTE_CATEGORY_MAX = 64,
 } t_remote_category;
+
+typedef enum
+{
+    SUB_CATEGORY_QUATERNARY = 0,
+    SUB_CATEGORY_HEXADECIMAL = 1,
+    SUB_CATEGORY_NEXT = 2,
+    SUB_CATEGORY_MAX = 7,
+} t_remote_sub_category;
 
 /**
  * function     get_lib_version
