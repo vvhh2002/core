@@ -26,6 +26,8 @@ public class IRDecode {
 
     private static Object mSync = new Object();
 
+    private native String irGetVersion();
+
     private native int irOpen(int category, int subCate, String fileName);
 
     private native int irOpenBinary(int category, int subCate, byte[] binaries, int binLength);
@@ -57,6 +59,10 @@ public class IRDecode {
         String libPath = "/data/irext/libirda_decoder.so";
         System.out.println("loading decode library " + libPath);
         System.load(libPath);
+    }
+
+    public String getVersion() {
+        return irGetVersion();
     }
 
     public int openFile(int category, int subCate, String fileName) {
