@@ -468,19 +468,6 @@ static UINT16 ir_ac_control(t_remote_ac_status ac_status, UINT16* user_data, UIN
 
     time_length = create_ir_frame();
 
-#if (defined BOARD_PC)
-#if (defined BOARD_PC_JNI)
-    ir_printf("code count = %d\n", context->code_cnt);
-#else
-    int i = 0;
-    for (i = 0; i < context->code_cnt; i++)
-    {
-        ir_printf("%d,", context->time[i]);
-    }
-#endif
-    ir_printf("\n");
-#endif
-
     return time_length;
 }
 
@@ -723,15 +710,6 @@ static UINT16 ir_tv_control(UINT8 key, UINT16 *l_user_data)
     UINT16 ir_code_length = 0;
     memset(l_user_data, 0x00, USER_DATA_SIZE);
     ir_code_length = tv_binary_decode(key, l_user_data);
-
-#if defined BOARD_PC
-    // have some debug
-    ir_printf("length of IR code = %d\n", ir_code_length);
-    for (print_index = 0; print_index < ir_code_length; print_index++)
-    {
-        ir_printf("%d ", l_user_data[print_index]);
-    }
-#endif
 
     return ir_code_length;
 }

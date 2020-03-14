@@ -38,7 +38,9 @@ set(SOURCE_FILES_LIB
         src/ir_ac_build_frame.c
         src/ir_ac_parse_parameter.c
         src/ir_ac_parse_forbidden_info.c
-        src/ir_ac_parse_frame_info.c
+
+
+            System.out.println("continue downloading");   src/ir_ac_parse_frame_info.c
         src/ir_ac_control.c
         src/ir_ac_binary_parse.c
         src/ir_decode.c)

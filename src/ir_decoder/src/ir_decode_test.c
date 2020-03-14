@@ -63,6 +63,8 @@ static INT8 decode_as_ac(char *file_name)
     UINT8 function_code = AC_FUNCTION_MAX;
     int key_code = 0;
     int first_time = 1;
+    int length = 0;
+    int index = 0;
 
     // get status
     UINT8 supported_mode = 0x00;
@@ -218,7 +220,13 @@ static INT8 decode_as_ac(char *file_name)
                        ac_status.ac_wind_dir,
                        function_code);
 
-                ir_decode(function_code, user_data, &ac_status, change_wind_dir);
+                length = ir_decode(function_code, user_data, &ac_status, change_wind_dir);
+                printf("\n === Binary decoded : %d\n", length);
+                for (index = 0; index < length; index++)
+                {
+                    printf("%d, ", user_data[index]);
+                }
+                printf("===\n");
             }
         }
     } while (TRUE);
@@ -233,6 +241,8 @@ static INT8 decode_as_tv(char *file_name, UINT8 ir_hex_encode)
     // keyboard input
     int key_code = 0;
     int first_time = 1;
+    int length = 0;
+    int index = 0;
 
     // here remote category TV represents for command typed IR code
     if (IR_DECODE_FAILED == ir_file_open(REMOTE_CATEGORY_TV, ir_hex_encode, file_name))
@@ -258,7 +268,13 @@ static INT8 decode_as_tv(char *file_name, UINT8 ir_hex_encode)
         {
             break;
         }
-        ir_decode(key_code, user_data, NULL, 0);
+        length = ir_decode(key_code, user_data, NULL, 0);
+        printf("\n === Binary decoded : %d\n", length);
+        for (index = 0; index < length; index++)
+        {
+            printf("%d, ", user_data[index]);
+        }
+        printf("===\n");
 
     } while (TRUE);
 
@@ -303,4 +319,6 @@ int main(int argc, char *argv[])
             printf("Decode functionality not supported : %c\n", function);
             break;
     }
+
+
 }
