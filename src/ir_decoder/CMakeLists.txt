@@ -64,7 +64,7 @@ set(SOURCE_FILES_JNI_SHARED_LIB
 
 ## ARM64 cross compile
 # SET(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-gcc")
-# SET(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-g++")
+# SET(CMAKE_CXX_COMPILER "/usr/bin/aarch64-linux-gnu-g++")
 # SET(CMAKE_FIND_ROOT_PATH "/usr/bin")
 
 # add_library(ir_decoder SHARED ${SOURCE_FILES_LIB})
