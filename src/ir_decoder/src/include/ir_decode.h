@@ -12,8 +12,10 @@ Revision log:
 #ifndef _IR_DECODE_H_
 #define _IR_DECODE_H_
 
+#if defined (BOARD_PC)
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
 #pragma ide diagnostic ignored "OCUnusedMacroInspection"
+#endif
 
 #ifdef __cplusplus
 extern "C"

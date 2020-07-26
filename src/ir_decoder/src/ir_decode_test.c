@@ -1,9 +1,9 @@
 /**************************************************************************************
-Filename:       ir_main.c
+Filename:       ir_decode_test.c
 Revised:        Date: 2016-11-05
 Revision:       Revision: 1.0
 
-Description:    This file provides main entry for irda decoder
+Description:    This file provides main entry for irda decoder test
 
 Revision log:
 * 2016-11-05: created by strawmanbobi
@@ -74,13 +74,13 @@ static INT8 decode_as_ac(char *file_name)
     UINT8 supported_swing = 0x00;
     UINT8 supported_wind_direction = 0x00;
 
-    BOOL need_control;
+    BOOL need_control = TRUE;
 
     // init air conditioner status
     ac_status.ac_display = 0;
     ac_status.ac_sleep = 0;
     ac_status.ac_timer = 0;
-    ac_status.ac_power = AC_POWER_OFF;
+    ac_status.ac_power = AC_POWER_ON;
     ac_status.ac_mode = AC_MODE_COOL;
     ac_status.ac_temp = AC_TEMP_20;
     ac_status.ac_wind_dir = AC_SWING_ON;

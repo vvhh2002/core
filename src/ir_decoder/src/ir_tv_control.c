@@ -9,7 +9,9 @@ Revision log:
 * 2016-10-21: created by strawmanbobi
 **************************************************************************************/
 
+#if defined (BOARD_PC)
 #pragma ide diagnostic ignored "hicpp-signed-bitwise"
+#endif
 
 #include <string.h>
 

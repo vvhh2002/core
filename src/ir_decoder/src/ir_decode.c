@@ -31,8 +31,10 @@ struct tag_head tags[TAG_COUNT_FOR_PROTOCOL];
 #endif
 
 static UINT8 byte_array[PROTOCOL_SIZE] = { 0 };
+#if !defined NO_FS
 static size_t binary_length = 0;
 static UINT8 *binary_content = NULL;
+#endif
 
 static t_remote_category remote_category = REMOTE_CATEGORY_NONE;
 static UINT8 ir_binary_type = IR_TYPE_STATUS;
@@ -178,7 +180,7 @@ INT8 ir_binary_open(const UINT8 category, const UINT8 sub_category, UINT8* binar
         ir_printf("wrong remote category\n");
         return IR_DECODE_FAILED;
     }
-    remote_category = category;
+    remote_category = (t_remote_category) category;
 
     if (sub_category < SUB_CATEGORY_QUATERNARY ||
         sub_category >= SUB_CATEGORY_NEXT)
@@ -738,7 +740,7 @@ UINT16 ir_decode_combo(const UINT8 category, const UINT8 sub_category,
         return IR_DECODE_FAILED;
     }
 
-    remote_category = category;
+    remote_category = (t_remote_category) category;
 
     if (key_code < 0 || key_code >= KEY_CODE_MAX[remote_category])
     {

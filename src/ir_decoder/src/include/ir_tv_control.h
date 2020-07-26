@@ -12,8 +12,10 @@ Revision log:
 #ifndef _IR_TV_CONTROL_H_
 #define _IR_TV_CONTROL_H_
 
+#if defined (BOARD_PC)
 #pragma ide diagnostic ignored "OCUnusedMacroInspection"
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
+#endif
 
 #ifdef __cplusplus
 extern "C"
