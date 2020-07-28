@@ -60,7 +60,6 @@ static INT8 decode_as_ac(char *file_name)
 {
     BOOL op_match = TRUE;
     BOOL change_wind_dir = FALSE;
-    UINT8 function_code = AC_FUNCTION_MAX;
     int key_code = 0;
     int first_time = 1;
     int length = 0;
@@ -164,8 +163,9 @@ static INT8 decode_as_ac(char *file_name)
         {
             switch (key_code)
             {
+                // notice: only if ac_power is turned on will user_data change when input a different key_code
                 case 0:
-                    ac_status.ac_power = ((ac_status.ac_wind_dir == AC_POWER_ON) ? AC_POWER_OFF : AC_POWER_ON);
+                    ac_status.ac_power = ((ac_status.ac_power == AC_POWER_ON) ? AC_POWER_OFF : AC_POWER_ON);
                     need_control = TRUE;
                     break;
 
@@ -212,21 +212,20 @@ static INT8 decode_as_ac(char *file_name)
 
             if (TRUE == op_match && TRUE == need_control)
             {
-                printf("switch AC to power = %d, mode = %d, temp = %d, speed = %d, swing = %d with function code = %d\n",
+                printf("switch AC to power = %d, mode = %d, temp = %d, speed = %d, swing = %d with key_code = %d\n",
                        ac_status.ac_power,
                        ac_status.ac_mode,
                        ac_status.ac_temp,
                        ac_status.ac_wind_speed,
                        ac_status.ac_wind_dir,
-                       function_code);
-
-                length = ir_decode(function_code, user_data, &ac_status, change_wind_dir);
+                       key_code);
+                length = ir_decode(key_code, user_data, &ac_status, change_wind_dir);
                 printf("\n === Binary decoded : %d\n", length);
                 for (index = 0; index < length; index++)
                 {
                     printf("%d, ", user_data[index]);
                 }
-                printf("===\n");
+                printf("\n");
             }
         }
     } while (TRUE);
